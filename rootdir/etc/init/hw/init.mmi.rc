@@ -294,6 +294,9 @@ on property:sys.boot_completed=1 && property:ro.vendor.zram.swapon=true
     write /proc/sys/vm/swappiness 100
     setprop sys.sysctl.swappiness 100
 
+    # Enable PowerHAL hint processing
+    setprop vendor.powerhal.init 1
+
 service vendor.mmi-boot-sh /vendor/bin/init.mmi.boot.sh
     class core
     user root
