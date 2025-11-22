@@ -137,6 +137,9 @@ persist.vendor.qcom.bluetooth.twsp_state.enabled=false
 ro.bluetooth.a2dp_offload.supported=true
 vendor.qcom.bluetooth.soc=hastings
 
+# Blur
+ro.surface_flinger.supports_background_blur=1
+
 # Camera
 camera.disable_zsl_mode=1
 

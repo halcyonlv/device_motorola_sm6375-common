@@ -3,6 +3,9 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
+# Inherit some common Halcyon stuff.
+$(call inherit-product, vendor/halcyon/config/common.mk)
+
 # Partitions
 PRODUCT_PACKAGES += \
     vendor_bt_firmware_mountpoint \
@@ -23,7 +26,7 @@ $(call inherit-product, hardware/qcom-caf/common/common.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-lineage
+    $(LOCAL_PATH)/overlay-nonrro
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
@@ -193,7 +196,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
 
 # Kernel
-PRODUCT_ENABLE_UFFD_GC := true
+override PRODUCT_ENABLE_UFFD_GC := true
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
