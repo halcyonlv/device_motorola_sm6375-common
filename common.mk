@@ -271,7 +271,8 @@ PRODUCT_PACKAGES += \
 
 # Power
 PRODUCT_PACKAGES += \
-    android.hardware.power-service-qti
+    android.hardware.power-service.pixel-libperfmgr \
+    libqti-perfd-client
 
 # Properties
 PRODUCT_VENDOR_PROPERTY_BLACKLIST := \
@@ -289,7 +290,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/motorola \
-    hardware/samsung
+    hardware/samsung \
+    hardware/google/interfaces \
+    hardware/google/pixel \
+    hardware/qcom-caf/common/libqti-perfd-client
 
 # Telephony
 PRODUCT_PACKAGES += \
